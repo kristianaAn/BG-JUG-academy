@@ -1,18 +1,15 @@
 package unit_testing_lectures;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 public class ClothesChooser {
-    private int temp;
+    private WeatherStation weatherStation;
 
-    public Clothes chooseCloth(int temp) {
+    public ClothesChooser(WeatherStation weatherStation) {
+        this.weatherStation = weatherStation;
+    }
+
+    public Clothes chooseCloth() {
+        int temp = weatherStation.getWeatherTemp();
+
         if (temp <= 10) {
             return Clothes.JACKET;
         } else if (temp < 20) {
