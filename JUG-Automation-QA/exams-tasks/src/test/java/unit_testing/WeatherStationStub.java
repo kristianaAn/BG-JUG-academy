@@ -1,10 +1,11 @@
 package unit_testing;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import unit_testing_lectures.WeatherStation;
 
+@Getter
+@Setter
 public class WeatherStationStub extends WeatherStation {
     public int temperature;
 
@@ -17,7 +18,4 @@ public class WeatherStationStub extends WeatherStation {
         return temperature;
     }
 
-    public int getTemperature() {
-        return temperature;
-    }
 }
