@@ -42,6 +42,7 @@ public class ClothesChooserTest {
         Assertions.assertEquals(cloth, chosenCloth);
     }
 
+
     static Stream<Arguments> tempsAndClothesProvider() {
         return Stream.of(
                 arguments(5, Clothes.JACKET),
