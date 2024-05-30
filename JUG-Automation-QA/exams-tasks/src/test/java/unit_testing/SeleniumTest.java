@@ -9,11 +9,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Scanner;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class SeleniumTest {
 
+    Scanner scanner = new Scanner(System.in);
+    int balance = Integer.parseInt("50");
     @Test
     public void testGoogleSearchFunctionality() {
         WebDriver webDriver = new ChromeDriver();
