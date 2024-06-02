@@ -1,4 +1,4 @@
-package unit_testing;
+package unit_testing.selenium_tests;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -8,25 +8,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.security.Key;
 import java.time.Duration;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class SeleniumYTTest {
+public class SeleniumTest {
 
     @Test
-    public void testYouTubeSearcher() throws InterruptedException {
+    public void testGoogleSearchFunctionality() {
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
 
         try {
-            webDriver.get("https://www.youtube.com/");
-            webDriver.findElement(By.xpath ("//*[@id=\"content\"]/div[2]/div[6]/div[1]/ytd-button-renderer[2]/yt-button-shape/button")).click();
-            Thread.sleep(3000);
-            webDriver.findElement(By.xpath("//input[@id='search']")).sendKeys("Bulgarian Java User Group");
-            webDriver.findElement(By.id("search-icon-legacy")).click();
-            String resultXPath = "//*[@id=\"main-link\"]";
+            webDriver.get("https://www.google.com/");
+            webDriver.findElement(By.id("L2AGLb")).click();
+            webDriver.findElement(By.name("q")).sendKeys("jug.bg" + Keys.ENTER);
+            String resultXPath = "//a[@href='https://jug.bg/']";
             WebElement result = wait.until(presenceOfElementLocated(By.xpath(resultXPath)));
             result.click();
         } finally {
